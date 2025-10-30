@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">AppPMDM</string>
+
+
+    <!-- Fichero de preferencias compartidas -->
+    <string name="name_preferen_shared_fich">shared_fich</string>
+
+    <!-- Clave a almacenar -->
+    <string name="name_shared_phone">phone_number</string>
+    <string name="name_shared_url">url_shared</string>
+    <string name="name_shared_min">min_shared</string>
+    <string name="txt_configuracion">Configura el número de teléfono</string>
+    <string name="txt_configuracion2">¿A que URL quieres ir?</string>
+    <string name="txt_phone">Número de Teléfono:</string>
+    <string name="txt_url">URL:</string>
+    <string name="txt_mins">NªMins:</string>
+    <string name="txt_boton_aceptar">Aceptar</string>
+    <string name="txt_version_app">V1.0</string>
+
+    <string name="msg_empty_phone">Debes introducir un teléfono válido</string>
+    <string name="msg_empty_url">Debes introducir una url</string>
+    <string name="msg_not_valid_phone">Teléfono no válido</string>
+    <string name="msg_not_valid_url">Url inválida</string>
+    <string name="msg_not_valid">Ninguno de los dos es valido</string>
+    <string name="msg_new_phone">Debes poner un nuevo teléfono</string>
+    <string name="msg_new_url">Debes poner una nueva url</string>
+    <string name="txt_SOS">Llamar SOS</string>
+    <string name="string_phone">phone</string>
+    <string name="string_url">url</string>
+    <string name="string_min">min</string>
+    <string name="url">URL</string>
+    <string name="alarma">Alarma</string>
+    <string name="llamada">Llamada</string>
+    <string name="gmail">Gmail</string>
+</resources>
