@@ -25,20 +25,19 @@ CallPhoneSOS es una aplicación Android que proporciona funcionalidades de emerg
 │   ├── src/
 │   │   ├── main/
 │   │   │   ├── java/com/example/sosphone/
-│   │   │   │   ├── ConfActivity.kt      # Configuración inicial
-│   │   │   │   ├── MainActivity.kt      # Pantalla principal
-│   │   │   │   └── MainActivity2.kt     # Funcionalidades adicionales
+│   │   │   │   ├── ConfActivity.kt     
+│   │   │   │   └── MainActivity2.kt     
 │   │   │   ├── res/
 │   │   │   │   └── layout/
-│   │   │   │       ├── activity_conf.xml    # Layout de configuración
-│   │   │   │       ├── activity_ppal.xml    # Layout principal
-│   │   │   │       └── activity_main2.xml   # Layout secundario
+│   │   │   │       ├── activity_conf.xml    
+│   │   │   │       ├── activity_ppal.xml    
+│   │   │   │       └── activity_main2.xml   
 │   │   │   └── AndroidManifest.xml
-│   │   ├── androidTest/                 # Pruebas instrumentadas
-│   │   └── test/                        # Pruebas unitarias
-│   └── build.gradle.kts                 # Configuración de dependencias
+│   │   ├── androidTest/                 
+│   │   └── test/                       
+│   └── build.gradle.kts                 
 ├── gradle/
-└── build.gradle.kts                     # Configuración del proyecto
+└── build.gradle.kts                    
 ```
 
 ## Componentes Principales
