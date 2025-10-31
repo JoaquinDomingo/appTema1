@@ -45,25 +45,30 @@ class MainActivity2 : AppCompatActivity() {
         when (view.id) {
             R.id.btnLlamada -> {
                 if (phonenumber.isNullOrEmpty()) {
-                    Toast.makeText(this, "Número no válido", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Ese número no sale", Toast.LENGTH_SHORT).show()
                 } else if (isCallPermissionGranted()) {
-                    callPhone()
+                    llamadaTlf()
                 } else {
                     requestPermissionLauncher.launch(Manifest.permission.CALL_PHONE)
                 }
             }
 
             R.id.btnUrl -> {
-                url?.let { openUrl(it) } ?: Toast.makeText(this, "URL no válida", Toast.LENGTH_SHORT).show()
+                url?.let { abrirUrl(it) } ?: Toast.makeText(this, "Esa Url es incorrecta", Toast.LENGTH_SHORT).show()
             }
 
-            R.id.btnAlarm -> setAlarm()
+            R.id.btnAlarm -> establecerAlarma()
 
-            R.id.btnGmail -> sendEmail()
+            R.id.btnGmail -> enviarCorreoElectronico()
+
+            R.id.btnvolverAtras -> {
+                val intent = Intent(this, ConfActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
-    private fun callPhone() {
+    private fun llamadaTlf() {
         startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$phonenumber")))
     }
 
@@ -74,7 +79,7 @@ class MainActivity2 : AppCompatActivity() {
     private fun registerPermissionLauncher() {
         requestPermissionLauncher =
             registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-                if (granted) callPhone() else goToAppSettings()
+                if (granted) llamadaTlf() else goToAppSettings()
             }
     }
 
@@ -84,19 +89,8 @@ class MainActivity2 : AppCompatActivity() {
             data = Uri.fromParts("package", packageName, null)
         })
     }
-    /*
-    private fun openUrl(rawUrl: String) {
-        val formattedUrl = if (rawUrl.startsWith("http://") || rawUrl.startsWith("https://")) rawUrl else "https://$rawUrl"
-        Intent(Intent.ACTION_VIEW, Uri.parse(formattedUrl)).apply {
-            addCategory(Intent.CATEGORY_BROWSABLE)
-            try { startActivity(this) }
-            catch (e: Exception) {
-                Toast.makeText(this@MainActivity2, "No hay navegador disponible", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-    */
-    private fun openUrl(rawUrl: String) {
+
+    private fun abrirUrl(rawUrl: String) {
         val formattedUrl = if (rawUrl.startsWith("http://") || rawUrl.startsWith("https://")) {
             rawUrl
         } else {
@@ -118,7 +112,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
-    private fun setAlarm() {
+    private fun establecerAlarma() {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.MINUTE, 2)
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -134,14 +128,14 @@ class MainActivity2 : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun sendEmail() {
+    private fun enviarCorreoElectronico() {
         val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:dojoaquindo@gmail.com")).apply {
-            putExtra(Intent.EXTRA_SUBJECT, "Correo desde SOSPhone")
-            putExtra(Intent.EXTRA_TEXT, "Mensaje enviado desde la app SOSPhone.")
+            putExtra(Intent.EXTRA_SUBJECT, "Correo desde la aplicación de Joaquín Domingo Domingo")
+            putExtra(Intent.EXTRA_TEXT, "Este es el mensaje enviado a través del metodo sendEmail()")
         }
         try { startActivity(intent) }
         catch (e: Exception) {
-            Toast.makeText(this, "No se encontró app de correo", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No se encontró ninguna app de correo", Toast.LENGTH_SHORT).show()
         }
     }
 }

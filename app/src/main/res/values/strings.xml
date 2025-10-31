@@ -15,7 +15,7 @@
     <string name="txt_url">URL:</string>
     <string name="txt_mins">NªMins:</string>
     <string name="txt_boton_aceptar">Aceptar</string>
-    <string name="txt_version_app">V1.0</string>
+    <string name="txt_version_app">V1.5</string>
 
     <string name="msg_empty_phone">Debes introducir un teléfono válido</string>
     <string name="msg_empty_url">Debes introducir una url</string>
@@ -32,4 +32,5 @@
     <string name="alarma">Alarma</string>
     <string name="llamada">Llamada</string>
     <string name="gmail">Gmail</string>
+    <string name="volver">Volver a Configuración</string>
 </resources>
