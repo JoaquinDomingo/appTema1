@@ -1,8 +1,8 @@
-# CallPhoneSOS
+# Aplicación Multitarea
 
 ## Descripción
 
-CallPhoneSOS es una aplicación Android creada para ofrecer funcionalidades de emergencia y comunicación rápida.  
+Esta es una aplicación Android creada para ofrecer funcionalidades de comunicación rápida.  
 Permite al usuario configurar un número telefónico de emergencia y una URL de referencia, realizar llamadas con un solo toque, programar alarmas y enviar correos electrónicos de forma eficiente.
 
 ---
