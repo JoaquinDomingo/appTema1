@@ -139,8 +139,9 @@ class MainActivity2 : AppCompatActivity() {
             putExtra(Intent.EXTRA_SUBJECT, "Correo desde la aplicación de Joaquín Domingo Domingo")
             putExtra(Intent.EXTRA_TEXT, "Este es el mensaje enviado a través del metodo sendEmail()")
         }
-        try { startActivity(intent) }
-        catch (e: Exception) {
+        try {
+            startActivity(intent)
+        } catch (e: Exception) {
             Toast.makeText(this, "No se encontró ninguna app de correo", Toast.LENGTH_SHORT).show()
         }
     }
