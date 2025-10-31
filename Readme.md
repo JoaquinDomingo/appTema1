@@ -113,7 +113,7 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 
                 ### Descripción
 
-                  1. **Programación de alarma**:
+               1. **Programación de alarma**:
                      - Se crea un objeto `Calendar` con la hora actual.
                      - Se suma 2 minutos para programar la alarma.
 
