@@ -54,7 +54,11 @@ class MainActivity2 : AppCompatActivity() {
             }
 
             R.id.btnUrl -> {
-                url?.let { abrirUrl(it) } ?: Toast.makeText(this, "Esa Url es incorrecta", Toast.LENGTH_SHORT).show()
+                url?.let { abrirUrl(it) } ?: Toast.makeText(
+                    this,
+                    "Esa Url es incorrecta",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             R.id.btnAlarm -> establecerAlarma()
@@ -63,7 +67,11 @@ class MainActivity2 : AppCompatActivity() {
 
             R.id.btnvolverAtras -> {
                 val intent = Intent(this, ConfActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                intent.putExtra("back", true)
                 startActivity(intent)
+                finish()
+
             }
         }
     }
