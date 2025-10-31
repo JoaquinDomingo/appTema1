@@ -61,6 +61,7 @@ class ConfActivity : AppCompatActivity() {
         val ret = intent.getBooleanExtra("back", false)
         if (ret){
             confBinding.editPhone.setText("")
+            confBinding.editURL.setText("")
             Toast.makeText(this, R.string.msg_new_phone, Toast.LENGTH_LONG).show()
             intent.removeExtra("back")  //por si se interrumpe.
         }

@@ -22,7 +22,7 @@
     <string name="msg_not_valid_phone">Teléfono no válido</string>
     <string name="msg_not_valid_url">Url inválida</string>
     <string name="msg_not_valid">Ninguno de los dos es valido</string>
-    <string name="msg_new_phone">Debes poner un nuevo teléfono</string>
+    <string name="msg_new_phone">Debes poner un nuevo teléfono y una nueva URL</string>
     <string name="msg_new_url">Debes poner una nueva url</string>
     <string name="txt_SOS">Llamar SOS</string>
     <string name="string_phone">phone</string>

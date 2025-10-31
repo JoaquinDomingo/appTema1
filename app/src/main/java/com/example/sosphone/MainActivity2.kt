@@ -70,8 +70,6 @@ class MainActivity2 : AppCompatActivity() {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                 intent.putExtra("back", true)
                 startActivity(intent)
-                finish()
-
             }
         }
     }
