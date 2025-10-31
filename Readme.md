@@ -199,7 +199,7 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 
 ## Estado del desarrollo
 
-**Versión actual:** 1.0.0  
+**Versión actual:** 1.5.0  
 **Estado:** Estable
 
 ### Implementado
