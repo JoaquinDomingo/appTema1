@@ -31,7 +31,7 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 ---
 
 ## Estructura del proyecto
-
+```
 .
 ├── app/
 │ ├── src/
@@ -49,7 +49,7 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 │ └── build.gradle.kts
 ├── gradle/
 └── build.gradle.kts
-
+```
 ---
 
 ## Componentes principales
