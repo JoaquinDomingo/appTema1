@@ -64,10 +64,82 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 - Actividad principal de emergencia.
 - Permite realizar llamadas directas al número configurado.
 - Acceder a la URL configurada.
-- Programar alarmas.
-- Enviar correos electrónicos.
+    - Programar alarmas.
+        - Enviar correos electrónicos.
+            * Metodos utilizados
+                * Realizar llamadas
 
----
+                      - `onButtonClick(view: View)`
+                      - `llamadaTlf()`
+                      - `isCallPermissionGranted()`
+                      - `registerPermissionLauncher()`
+                      - `goToAppSettings()`
+
+                  ### Descripción
+
+                    1. **Permisos**: Se verifica si la app tiene permiso `CALL_PHONE`.
+                       - Si el dispositivo cuenta con una API menor a la 23, no nos pedira los permisos
+                       - Si no lo tiene, se solicita con un `ActivityResultLauncher`.
+                       - Si el usuario lo rechaza, se redirige a los ajustes de la aplicación con `goToAppSettings()`.
+
+                    2. **Realizar llamada**:
+                       - `llamadaTlf()` utiliza un `Intent.ACTION_CALL` con el número proporcionado en `phonenumber`.
+
+                    3. **Flujo resumido**:
+                        - Usuario presiona el botón → se verifica permiso → si está permitido se llama → si no, se solicita permiso.
+
+                * Abrir URL
+
+                    - `onButtonClick(view: View)`
+                    - `abrirUrl(rawUrl: String)`
+
+                      ### Descripción
+
+                        1. **Validación de URL**:
+                            - Se agrega automáticamente `https://` si el usuario no lo incluye.
+                            - Bloquea URLs específicas como `twitter.com` o `x.com` mostrando un `Toast`.
+
+                        2. **Abrir navegador**:
+                            - Se utiliza un `Intent.ACTION_VIEW` con `Uri.parse(formattedUrl)`.
+                            - Se añade la categoría `Intent.CATEGORY_BROWSABLE` para abrir en navegador.
+
+                        3. **Manejo de errores**:
+                            - Si no hay navegador disponible, se muestra un `Toast` notificando al usuario.
+
+            * Establecer alarma
+
+                 - `onButtonClick(view: View)`
+                 - `establecerAlarma()`
+
+                ### Descripción
+
+                  1. **Programación de alarma**:
+                     - Se crea un objeto `Calendar` con la hora actual.
+                     - Se suma 2 minutos para programar la alarma.
+
+                2. **Intent de alarma**:
+                    - Se utiliza `AlarmClock.ACTION_SET_ALARM`.
+                    - Se configuran extras como mensaje (`EXTRA_MESSAGE`), hora (`EXTRA_HOUR`), minutos (`EXTRA_MINUTES`) y `EXTRA_SKIP_UI`.
+
+                3. **Notificación al usuario**:
+                    - Se muestra un `Toast` indicando que la alarma ha sido programada en 2 minutos.
+
+            * Enviar correo electrónico
+
+                - `onButtonClick(view: View)`
+                - `enviarCorreoElectronico()`
+
+                ### Descripción
+
+                1. **Crear intent de correo**:
+                    - Se utiliza `Intent.ACTION_SENDTO` con esquema `mailto:`.
+                    - Se pueden agregar `EXTRA_SUBJECT` y `EXTRA_TEXT` para asunto y cuerpo del correo.
+
+                2. **Abrir aplicación de correo**:
+                    - `startActivity(intent)` abre la app de correo predeterminada.
+
+                3. **Manejo de errores**:
+                    - Si no se encuentra ninguna aplicación de correo, se muestra un `Toast` notificando al usuario.
 
 ## Tecnologías y patrones utilizados
 
