@@ -9,6 +9,10 @@
     <string name="name_shared_phone">phone_number</string>
     <string name="name_shared_url">url_shared</string>
     <string name="name_shared_min">min_shared</string>
+    <string name="name_shared_spinner">T.Spinner</string>
+    <string name="name_shared_checkbox">CheckBox</string>
+    <string name="name_shared_radio">Radios</string>
+    <string name="name_shared_DatePicker">Seleccionador de Fecha</string>
     <string name="txt_configuracion">Configura el número de teléfono</string>
     <string name="txt_configuracion2">¿A que URL quieres ir?</string>
     <string name="txt_phone">Número de Teléfono:</string>
@@ -16,6 +20,24 @@
     <string name="txt_mins">NªMins:</string>
     <string name="txt_boton_aceptar">Aceptar</string>
     <string name="txt_version_app">V1.5</string>
+    <string-array name="spinner_times">
+        <item>3</item>
+        <item>4 </item>
+        <item>5 </item>
+        <item>6 </item>
+        <item>7 </item>
+        <item>8 </item>
+        <item>9 </item>
+        <item>10 </item>
+        <item>11 </item>
+        <item>12 </item>
+        <item>13 </item>
+        <item>14 </item>
+        <item>15 </item>
+        <item>16 </item>
+        <item>17 </item>
+        <item>18 </item>
+    </string-array>
 
     <string name="msg_empty_phone">Debes introducir un teléfono válido</string>
     <string name="msg_empty_url">Debes introducir una url</string>

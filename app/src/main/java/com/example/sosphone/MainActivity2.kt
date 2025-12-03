@@ -29,6 +29,9 @@ class MainActivity2 : AppCompatActivity() {
     private var phonenumber: String? = null
     private var url: String? = null
 
+    private var apuesta = 3
+    private var tiempoTiradas = 1
+
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +41,8 @@ class MainActivity2 : AppCompatActivity() {
 
         phonenumber = intent.getStringExtra(getString(R.string.string_phone))
         url = intent.getStringExtra(getString(R.string.string_url))
+        apuesta = intent.getIntExtra("APUESTA", 3)
+        tiempoTiradas = intent.getIntExtra("TIEMPO TIRADAS", 1)
         registerPermissionLauncher()
     }
 
@@ -64,6 +69,14 @@ class MainActivity2 : AppCompatActivity() {
             R.id.btnAlarm -> establecerAlarma()
 
             R.id.btnGmail -> enviarCorreoElectronico()
+
+            R.id.btnDados -> {
+                val intent = Intent(this, ActivityDados::class.java).apply {
+                    putExtra("TIEMPO TIRADAS", tiempoTiradas)
+                    putExtra("APUESTA", apuesta)
+                }
+                startActivity(intent)
+            }
 
             R.id.btnvolverAtras -> {
                 val intent = Intent(this, ConfActivity::class.java)
