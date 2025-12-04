@@ -79,7 +79,6 @@ class ActivityDados : AppCompatActivity() {
     }
 
     private fun throwDadoInTime() {
-        // Tirar 3 dados fijos
         val numDados = Array(3){Random.nextInt(1, 7)}
         val imagViews : Array<ImageView> = arrayOf(
             bindingMain.imagviewDado1,
@@ -126,7 +125,6 @@ class ActivityDados : AppCompatActivity() {
     }
 
     private fun showResultCard(total: Int) {
-        // Implementa aquí la lógica para mostrar una imagen (card_low, card_medium, etc.)
-        // en el ImageView de la carta, basada en el valor de 'total'.
+
     }
 }

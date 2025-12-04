@@ -12,17 +12,6 @@
         android:layout_height="wrap_content"
         android:paddingBottom="40dp">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:indeterminateTint="@color/white"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.4" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/mainContentLayout"
@@ -45,7 +34,7 @@
                 android:contentDescription="Imagen principal de la aplicación" />
 
             <TextView
-                android:id="@+id/txt_dashboard_title"
+                android:id="@+id/txtPrincipal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PANEL DE ACCESO RÁPIDO"
@@ -58,7 +47,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_actions_grid"
+                android:id="@+id/menuBonito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -67,7 +56,7 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/txt_dashboard_title"
+                app:layout_constraintTop_toBottomOf="@+id/txtPrincipal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
@@ -157,7 +146,7 @@
                             android:layout_margin="8dp"
                             android:backgroundTint="@color/blue"
                             android:onClick="onButtonClick"
-                            android:text="Dados a Secas"
+                            android:text="Juego Dados"
                             android:textColor="@android:color/white"
                             android:textStyle="bold"
                             android:textSize="14sp" />
@@ -170,7 +159,7 @@
                             android:layout_margin="8dp"
                             android:backgroundTint="@color/purple"
                             android:onClick="onButtonClick"
-                            android:text="Chistes a Secas"
+                            android:text="¿Quieres un chiste?"
                             android:textColor="@android:color/white"
                             android:textStyle="bold"
                             android:textSize="14sp" />
@@ -194,7 +183,7 @@
                 android:onClick="onButtonClick"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_actions_grid" />
+                app:layout_constraintTop_toBottomOf="@+id/menuBonito" />
 
             <TextView
                 android:id="@+id/textView2"
