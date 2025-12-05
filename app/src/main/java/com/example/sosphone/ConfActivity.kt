@@ -222,9 +222,9 @@ class ConfActivity : AppCompatActivity() {
     }
 
     private fun setupCheckbox() {
-        confBinding.checkTTS.isChecked = check
+        confBinding.check.isChecked = check
 
-        confBinding.checkTTS.setOnCheckedChangeListener { _, isChecked ->
+        confBinding.check.setOnCheckedChangeListener { _, isChecked ->
             check = isChecked
         }
     }

@@ -19,7 +19,7 @@
     <string name="txt_url">URL:</string>
     <string name="txt_mins">NªMins:</string>
     <string name="txt_boton_aceptar">Aceptar</string>
-    <string name="txt_version_app">V1.5</string>
+    <string name="txt_version_app">V2</string>
     <string-array name="spinner_times">
         <item>3</item>
         <item>4 </item>

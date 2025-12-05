@@ -125,6 +125,26 @@ class ActivityDados : AppCompatActivity() {
     }
 
     private fun showResultCard(total: Int) {
-
+        val recursoCarta = when (total) {
+            3 -> R.drawable.card_3
+            4 -> R.drawable.card_4
+            5 -> R.drawable.card_5
+            6 -> R.drawable.card_6
+            7 -> R.drawable.card_7
+            8 -> R.drawable.card_8
+            9 -> R.drawable.card_9
+            10 -> R.drawable.card_10
+            11 -> R.drawable.card_11
+            12 -> R.drawable.card_12
+            13 -> R.drawable.card_13
+            14 -> R.drawable.card_14
+            15 -> R.drawable.card_15
+            16 -> R.drawable.card_16
+            17 -> R.drawable.card_17
+            18 -> R.drawable.card_18
+            else -> R.drawable.card_default
+        }
+        bindingMain.imageResultadoCarta.setImageResource(recursoCarta)
+        bindingMain.imageResultadoCarta.visibility = View.VISIBLE
     }
 }
