@@ -38,10 +38,16 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 │ │ ├── main/
 │ │ │ ├── java/com/example/sosphone/
 │ │ │ │ ├── ConfActivity.kt
+│ │ │ │ ├── ActivityChistes.kt
+│ │ │ │ ├── ActivityDados.kt
+│ │ │ │ ├── AcertadoActivity.kt
 │ │ │ │ └── MainActivity2.kt
 │ │ │ ├── res/layout/
 │ │ │ │ ├── activity_conf.xml
 │ │ │ │ ├── activity_ppal.xml
+│ │ │ │ ├── activity_acertado.xml
+│ │ │ │ ├── activity_chistes.xml
+│ │ │ │ ├── activitydados.xml
 │ │ │ │ └── activity_main2.xml
 │ │ │ └── AndroidManifest.xml
 │ │ ├── androidTest/
@@ -58,6 +64,12 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 - Actividad de configuración inicial.
 - Permite al usuario establecer el número de teléfono de emergencia.
 - Valida el formato del número telefónico (español).
+- Permite al usuario establecer una URL de referencia.
+- Valida el formato de la URL.
+- Recoge la fecha actual y la manda a MainActivity2.
+- Configuramos el checkbox para activar o desactivar la función de voz en ActivityChistes.
+- Configuramos el numero a adivinar en ActivityDados.
+- Configuramos el tiempo entre tiradas de dados en ActivityDados.
 - Guarda la configuración usando `SharedPreferences`.
 
 ### MainActivity2
@@ -141,6 +153,39 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
                 3. **Manejo de errores**:
                     - Si no se encuentra ninguna aplicación de correo, se muestra un `Toast` notificando al usuario.
 
+### ActivityChistes
+- Activity para mostrar chistes aleatorios.
+- Utiliza una lista predefinida de chistes.
+- 
+Metodo principal:
+- `mostrarChisteAleatorio()`: Selecciona y muestra un chiste aleatorio
+- Mediante un botón, el usuario puede obtener un nuevo chiste, y una voz lee el chiste en voz alta.
+
+Conseguimos reproducir la voz utilizando la clase TextToSpeech de Android.
+
+Para añadirle mas funcionalidad a la aplicación, en el ConfActivity, añadimos un checkbox
+que permite activar o desactivar la función de voz  (sin desactivar la voz de explicación del activity).
+
+
+
+### ActivityDados
+- Activity para jugar a un juego de dados.
+- El usuario puede configurar el número a adivinar y el tiempo entre tiradas.
+- Metodo principal:
+- `tirarDados()`: Genera un número aleatorio entre 3 y 18 (divido entre 3 dados) y lo compara con el número a adivinar.
+- Si el usuario acierta, se lanza la actividad AcertadoActivity.
+- Si no acierta, se muestra un mensaje y se espera el tiempo configurado antes de permitir otra tirada.
+- Utilizamos un Handler para gestionar el tiempo entre tiradas.
+- El número a adivinar y el tiempo entre tiradas se configuran en la ConfActivity y se almacenan en SharedPreferences.
+
+- Cuando se realiza una tirada, se desactiva el botón de tirar dados durante el tiempo configurado para evitar múltiples tiradas simultáneas.
+- Dependiendo del numero obtenido, se muestra una imagen representativa (llendo desde el 3 al 18).
+- Si el usuario acierta, se lanza la actividad AcertadoActivity, que muestra un mensaje de felicitación.
+
+### AcertadoActivity
+- Actividad que se lanza cuando el usuario acierta el número en ActivityDados.
+- Muestra un mensaje de felicitación.
+
 ## Tecnologías y patrones utilizados
 
 - Kotlin 1.9.0
@@ -199,7 +244,7 @@ Permite al usuario configurar un número telefónico de emergencia y una URL de 
 
 ## Estado del desarrollo
 
-**Versión actual:** 1.5.0  
+**Versión actual:** 2.0.0  
 **Estado:** Estable
 
 ### Implementado

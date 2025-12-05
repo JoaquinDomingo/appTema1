@@ -17,7 +17,14 @@ class ActivityChistes : AppCompatActivity() {
         "¿Qué le dijo un pez a otro pez? ¡Nada!",
         "¿Por qué el libro de matemáticas estaba triste? Porque tenía muchos problemas.",
         "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
-        "¿Por qué los esqueletos no pelean entre ellos? Porque no tienen agallas."
+        "¿Por qué los esqueletos no pelean entre ellos? Porque no tienen agallas.",
+        "¿Cuál es el último animal que subió al arca de Noé? El del-fín.",
+        "¿Qué es un pelo en una cama? Un 'león' de la sabana.",
+        "¿Qué hace una persona en una piscina? ¡Nada!",
+        "Si se muere una pulga, ¿a dónde va? Al pulgatorio.",
+        "¿Qué es un punto verde en una esquina? Un guisante castigado.",
+        "¿Qué dice un jardinero cuando se encuentra con un amigo? ¡Hola, caracola!",
+        "¿Qué le dice un semáforo a otro? No me mires, que me estoy cambiando."
     )
 
     private lateinit var binding: ActivityChistesBinding

@@ -44,6 +44,10 @@
         <activity
             android:name=".ActivityChistes"
             android:exported="true"/>
+
+        <activity
+            android:name=".AcertadoActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
